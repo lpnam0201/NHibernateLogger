@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EmbeddedSources\NHibernateAppenderLogger.cs" />
+    <Compile Remove="EmbeddedSources\NHibernateAppenderLoggerFactory.cs" />
+    <Compile Remove="EmbeddedSources\NHibernateLoggerBridge.cs" />
+    <Compile Remove="EmbeddedSources\WrapNHibernateLoggers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedSources\NHibernateAppenderLogger.cs"></EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedSources\NHibernateAppenderLoggerFactory.cs"></EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedSources\NHibernateLoggerBridge.cs"></EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedSources\WrapNHibernateLoggers.cs"></EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.9.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+  </ItemGroup>
+</Project>
