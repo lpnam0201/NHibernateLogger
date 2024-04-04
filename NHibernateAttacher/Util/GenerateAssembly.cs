@@ -12,19 +12,19 @@ using System.Runtime.Loader;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHibernateAppender.Util
+namespace NHibernateProfilerLibrary.Util
 {
     public static class GenerateAssembly
     {
         private static readonly PortableExecutableReference[] References = (PortableExecutableReference[])(object)new PortableExecutableReference[7]
         {
-            MetadataReference.CreateFromFile(typeof(object).Assembly.Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(typeof(Environment).Assembly.Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(typeof(AssemblyTargetedPatchBandAttribute).Assembly.Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(typeof(NameValueCollection).Assembly.Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(typeof(Enum).Assembly.Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(Assembly.Load(new AssemblyName("System.Runtime")).Location, default(MetadataReferenceProperties)),
-            MetadataReference.CreateFromFile(Assembly.Load(new AssemblyName("System.Collections")).Location, default(MetadataReferenceProperties))
+            MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+            MetadataReference.CreateFromFile(typeof(Environment).Assembly.Location),
+            MetadataReference.CreateFromFile(typeof(AssemblyTargetedPatchBandAttribute).Assembly.Location),
+            MetadataReference.CreateFromFile(typeof(NameValueCollection).Assembly.Location),
+            MetadataReference.CreateFromFile(typeof(Enum).Assembly.Location),
+            MetadataReference.CreateFromFile(Assembly.Load(new AssemblyName("System.Runtime")).Location),
+            MetadataReference.CreateFromFile(Assembly.Load(new AssemblyName("System.Collections")).Location)
         };
 
         public static Assembly Compile(string sourceNamespace, IList<string> sources, IList<string> libraries)

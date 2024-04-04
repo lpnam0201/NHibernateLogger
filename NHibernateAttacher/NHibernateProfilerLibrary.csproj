@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EmbeddedSources\LoggerFactorySetup.cs" />
+    <Compile Remove="EmbeddedSources\NHibernateLoggerWithPublishEvent.cs" />
+    <Compile Remove="EmbeddedSources\NHibernateLoggerWithPublishEventFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedSources\NHibernateLoggerWithPublishEvent.cs"></EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedSources\NHibernateLoggerWithPublishEventFactory.cs"></EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedSources\LoggerFactorySetup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.9.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+  </ItemGroup>
+</Project>
